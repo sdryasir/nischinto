@@ -50,5 +50,26 @@ const grid = document.querySelector('.grid');
     speed: 400
   });
 
+
+
+
+async function getData() {
+  let res = await fetch("https://fakestoreapi.com/products");
+  let data = await res.json();
+
+  // Select or create a <ul>
+  let ul = document.querySelector("ul") || document.createElement("ul");
+  document.body.appendChild(ul);
+
+  data.forEach(product => {
+    let li = document.createElement("li");
+    li.textContent = product.title; // show product title
+    ul.appendChild(li);
+  });
+}
+
+
+getData();
+  
  
     
