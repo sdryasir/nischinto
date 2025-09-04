@@ -297,12 +297,16 @@ border-bottom: 1px solid var(--theme-primary);
     .tags { opacity: .7; font-size: 12px; }
 
 
-    .nav-item{
+
+    .nav-item.p-arrow{
         position: relative;
     }
-    .arrow{
+    .nav-item.p-arrow::after{
+        content: '';
+        display: block;
         position: absolute;
         bottom: -10px;
+        background-color: blue;
         left: 50%;
         transform: translateX(-50%) rotate(45deg);
         width: 40px;
